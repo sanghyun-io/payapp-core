@@ -1,0 +1,59 @@
+{
+  "name": "payapp-core",
+  "version": "1.0.0",
+  "description": "PayApp payment integration core library (framework-agnostic)",
+  "keywords": [
+    "payapp",
+    "payment",
+    "korea",
+    "결제",
+    "typescript"
+  ],
+  "homepage": "https://github.com/sanghyun-io/payapp-core#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanghyun-io/payapp-core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sanghyun-io/payapp-core/issues"
+  },
+  "license": "MIT",
+  "author": "Sanghyun",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./webhook": {
+      "import": "./dist/webhook.mjs",
+      "require": "./dist/webhook.js",
+      "types": "./dist/webhook.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "tsc && vite build",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build",
+    "release": "npm run build && npm publish --access public"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.2",
+    "vite-plugin-dts": "^3.9.1",
+    "vitest": "^1.6.0"
+  }
+}
